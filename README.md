@@ -7,12 +7,12 @@ The purpose here is to showcase how you can deploy an entire Kubernetes cluster 
 
 ## Overview
 
-- [Introduction](template-cluster-k3s#wave-introduction)
-- [Prerequisites](template-cluster-k3s#memo-prerequisites)
-- [Repository structure](template-cluster-k3s#open_file_folder-repository-structure)
-- [Lets go!](template-cluster-k3s#rocket-lets-go)
-- [Post installation](template-cluster-k3s#mega-post-installation)
-- [Thanks](template-cluster-k3s#handshake-thanks)
+- [Introduction](#wave-introduction)
+- [Prerequisites](#memo-prerequisites)
+- [Repository structure](#open_file_folder-repository-structure)
+- [Lets go!](#rocket-lets-go)
+- [Post installation](#mega-post-installation)
+- [Thanks](#handshake-thanks)
 
 ## :wave:&nbsp; Introduction
 
