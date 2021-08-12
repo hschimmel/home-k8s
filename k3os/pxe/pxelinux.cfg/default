@@ -1,0 +1,8 @@
+UI menu.c32
+MENU TITLE Network Boot
+TIMEOUT    50
+
+LABEL k3OS
+  KERNEL k3os/k3os-vmlinuz-amd64
+  APPEND initrd=k3os/k3os-initrd-amd64 k3os.mode=install k3os.install.iso_url=https://github.com/rancher/k3os/releases/download/v0.21.1-k3s1r0/k3os-amd64.iso k3os.install.config_url=https://raw.githubusercontent.com/hschimmel/home-k8s/main/k3os/config.yaml
+

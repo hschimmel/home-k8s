@@ -40,7 +40,6 @@ Already provisioned Bare metal or VMs with any modern operating system like Ubun
 
 | Tool                                                               | Purpose                                                             | Minimum version | Required |
 |--------------------------------------------------------------------|---------------------------------------------------------------------|:---------------:|:--------:|
-| [k3sup](https://github.com/alexellis/k3sup)                        | Tool to install k3s on your nodes                                   |    `0.10.2`     |    ✅     |
 | [kubectl](https://kubernetes.io/docs/tasks/tools/)                 | Allows you to run commands against Kubernetes clusters              |    `1.21.0`     |    ✅     |
 | [flux](https://toolkit.fluxcd.io/)                                 | Operator that manages your k8s cluster based on your Git repository |    `0.12.3`     |    ✅     |
 | [SOPS](https://github.com/mozilla/sops)                            | Encrypts k8s secrets with GnuPG                                     |     `3.7.1`     |    ✅     |
@@ -155,29 +154,11 @@ export FLUX_KEY_FP=AB675CE4CC64251G3S9AE1DAA88ARRTY2C009E2D
 
 :round_pushpin: Here we will be install [k3s](https://k3s.io/) with [k3sup](https://github.com/alexellis/k3sup). After completion, k3sup will drop a `kubeconfig` in your present working directory for use with interacting with your cluster with `kubectl`.
 
-1. Ensure you are able to SSH into you nodes with using your private ssh key. This is how k3sup is able to connect to your remote node.
+1. Ensure you are able to SSH into you nodes with using your private ssh key. It should be in [config.yaml](k3os/config.yaml)
 
-2. Install the master node
+2. Install the master node by [booting it from network](k3os/pxe/README.md)
 
-```sh
-k3sup install \
-    --host=169.254.1.1 \
-    --user=k8s-at-home \
-    --k3s-version=v1.20.5+k3s1 \
-    --k3s-extra-args="--disable servicelb --disable traefik --disable metrics-server"
-```
-
-3. Join worker nodes (optional)
-
-```sh
-k3sup join \
-    --host=169.254.1.2 \
-    --server-host=169.254.1.1 \
-    --k3s-version=v1.20.5+k3s1 \
-    --user=k8s-at-home
-```
-
-4. Verify the nodes are online
+3. Verify the node is online
    
 ```sh
 kubectl --kubeconfig=./kubeconfig get nodes
