@@ -1,0 +1,10 @@
+sshAuthorizedKeys:
+  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDnXhF0FhYpVLZ51YCxrT81Pg7lEMR1B6o6vPnnlQQncYMvoWgFvSrSe6s62+eDRARviPnJeEvVptDD5q79YMA95AH/O8cgXsMCE/YJL7uYNlWhbepGgXtuciSf2QT9sD2qxmN5D6g5XstMWCzs+bHa5pgUcjRSvR+JlQ1+eMFZql+6w4fXXpZNVLF3n8PC6J4xoBUTlmJeVgXygPfWi/axQamMZloUT3KmUC3R43FThvR+GMy+TA8HUoo+zV1spqEErbyYGE5Db2CVb3ENnhj9cBxkxnTG5S93UczOtNtfyT+yqTzYpDaiYPmR49US8vv0Fsb1RLfRmK5B5Fv9G6Mv
+  - github:hschimmel
+hostname: home-k8s-nuc
+k3os:
+  k3s_args:
+    - server
+    - "--disable=servicelb"
+    - "--disable=traefik"
+    - "--disable=metrics-server"
