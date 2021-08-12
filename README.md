@@ -1,17 +1,18 @@
-# Template for deploying k3s backed by Flux
+# My Home K8s
+Created from [template-cluster-k3s](https://github.com/k8s-at-home/).
 
-Template for deploying a single [k3s](https://k3s.io/) cluster with [k3sup](https://github.com/alexellis/k3sup) backed by [Flux](https://toolkit.fluxcd.io/) and [SOPS](https://toolkit.fluxcd.io/guides/mozilla-sops/).
+Deploying a single [k3s](https://k3s.io/) clusterbacked by [Flux](https://toolkit.fluxcd.io/) and [SOPS](https://toolkit.fluxcd.io/guides/mozilla-sops/).
 
 The purpose here is to showcase how you can deploy an entire Kubernetes cluster and show it off to the world using the [GitOps](https://www.weave.works/blog/what-is-gitops-really) tool [Flux](https://toolkit.fluxcd.io/). When completed, your Git repository will be driving the state of your Kubernetes cluster. In addition with the help of the [Flux SOPS integration](https://toolkit.fluxcd.io/guides/mozilla-sops/) you'll be able to commit GPG encrypted secrets to your public repo.
 
 ## Overview
 
-- [Introduction](https://github.com/k8s-at-home/template-cluster-k3s#wave-introduction)
-- [Prerequisites](https://github.com/k8s-at-home/template-cluster-k3s#memo-prerequisites)
-- [Repository structure](https://github.com/k8s-at-home/template-cluster-k3s#open_file_folder-repository-structure)
-- [Lets go!](https://github.com/k8s-at-home/template-cluster-k3s#rocket-lets-go)
-- [Post installation](https://github.com/k8s-at-home/template-cluster-k3s#mega-post-installation)
-- [Thanks](https://github.com/k8s-at-home/template-cluster-k3s#handshake-thanks)
+- [Introduction](template-cluster-k3s#wave-introduction)
+- [Prerequisites](template-cluster-k3s#memo-prerequisites)
+- [Repository structure](template-cluster-k3s#open_file_folder-repository-structure)
+- [Lets go!](template-cluster-k3s#rocket-lets-go)
+- [Post installation](template-cluster-k3s#mega-post-installation)
+- [Thanks](template-cluster-k3s#handshake-thanks)
 
 ## :wave:&nbsp; Introduction
 
@@ -55,7 +56,7 @@ Already provisioned Bare metal or VMs with any modern operating system like Ubun
 ### :warning:&nbsp; pre-commit
 
 It is advisable to install [pre-commit](https://pre-commit.com/) and the pre-commit hooks that come with this repository.
-[sops-pre-commit](https://github.com/k8s-at-home/sops-pre-commit) will check to make sure you are not by accident commiting your secrets un-encrypted.
+[sops-pre-commit](sops-pre-commit) will check to make sure you are not by accident commiting your secrets un-encrypted.
 
 After pre-commit is installed on your machine run:
 
@@ -158,7 +159,9 @@ export FLUX_KEY_FP=AB675CE4CC64251G3S9AE1DAA88ARRTY2C009E2D
 
 2. Install the master node by [booting it from network](k3os/pxe/README.md)
 
-3. Verify the node is online
+3. Create kubeconfig file, run `./k3os/get-kubeconfig.sh`
+
+4. Verify the node is online
    
 ```sh
 kubectl --kubeconfig=./kubeconfig get nodes
@@ -222,7 +225,7 @@ kubectl --kubeconfig=./kubeconfig create secret generic sops-gpg \
 
 ```sh
 # The repo you created from this template
-export BOOTSTRAP_GITHUB_REPOSITORY="https://github.com/k8s-at-home/home-cluster"
+export BOOTSTRAP_GITHUB_REPOSITORY="home-cluster"
 # Choose one of your domains or use a made up one
 export BOOTSTRAP_DOMAIN="k8s-at-home.com"
 # Pick a range of unused IPs that are on the same network as your nodes
