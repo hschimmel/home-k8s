@@ -35,6 +35,7 @@ spec:
         enabled: true
         annotations:
           kubernetes.io/ingress.class: "nginx"
+          nginx.org/websocket-services: home-assistant
         hosts:
           - host: "ha.${SECRET_DOMAIN}"
             paths:
@@ -43,3 +44,13 @@ spec:
         tls:
           - hosts:
               - "ha.${SECRET_DOMAIN}"
+
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+      startup:
+        enabled: false
