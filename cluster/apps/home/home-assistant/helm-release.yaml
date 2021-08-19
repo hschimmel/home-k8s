@@ -29,11 +29,6 @@ spec:
       config:
         enabled: true
         existingClaim: home-assistant-config
-        
-      usb:
-        enabled: true
-        type: hostPath
-        hostPath: /dev/ttyACM0
 
     ingress:
       main:
