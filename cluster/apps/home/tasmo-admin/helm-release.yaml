@@ -9,6 +9,7 @@ spec:
   releaseName: tasmo-admin
   chart:
     spec:
+      # renovate: registryUrl=https://charts.itstoni.com/
       chart: tasmo-admin
       version: 1.0.3
       sourceRef:
