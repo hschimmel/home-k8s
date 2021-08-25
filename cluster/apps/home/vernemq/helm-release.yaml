@@ -23,7 +23,7 @@ spec:
       tag: 1.12.1-alpine
     replicaCount: 1
     service:
-      type: LoadBalancer
+      type: ClusterIP
       externalIPs:
         - "${SVC_VERNEMQ_ADDRESS}"
       ws:
