@@ -151,17 +151,13 @@ gpg --list-secret-keys "${FLUX_KEY_NAME}"
 export FLUX_KEY_FP=AB675CE4CC64251G3S9AE1DAA88ARRTY2C009E2D
 ```
 
-### :sailboat:&nbsp; Installing k3s with k3sup
+### :sailboat:&nbsp; Installing k3s with k3os
 
-:round_pushpin: Here we will be install [k3s](https://k3s.io/) with [k3sup](https://github.com/alexellis/k3sup). After completion, k3sup will drop a `kubeconfig` in your present working directory for use with interacting with your cluster with `kubectl`.
+1. Install the master node by [booting it from network](k3os/pxe/README.md)
 
-1. Ensure you are able to SSH into you nodes with using your private ssh key. It should be in [config.yaml](k3os/config.yaml)
+2. Create kubeconfig file, run `./k3os/get-kubeconfig.sh`
 
-2. Install the master node by [booting it from network](k3os/pxe/README.md)
-
-3. Create kubeconfig file, run `./k3os/get-kubeconfig.sh`
-
-4. Verify the node is online
+3. Verify the node is online
    
 ```sh
 kubectl --kubeconfig=./kubeconfig get nodes

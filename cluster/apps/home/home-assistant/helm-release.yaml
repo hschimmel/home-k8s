@@ -31,6 +31,10 @@ spec:
         enabled: true
         existingClaim: home-assistant-config
 
+    service:
+      main:
+        type: ClusterIP
+
     ingress:
       main:
         enabled: true

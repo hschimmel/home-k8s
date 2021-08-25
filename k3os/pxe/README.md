@@ -10,4 +10,6 @@ wget https://github.com/rancher/k3os/releases/download/v0.21.1-k3s1r0/k3os-vmlin
 ```
 The entry is already in `pxelinux.cfg`
 
+3. Pre-assign ip-address with the MAC-addres in both DHCP services (DSM and Router). To avoid the ip changing at unexpected moment after install.
+
 Now boot from network on the cluster hardware.
