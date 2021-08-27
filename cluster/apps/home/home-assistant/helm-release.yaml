@@ -20,11 +20,9 @@ spec:
     image:
       repository: homeassistant/home-assistant
       tag: 2021.8.4
-    env:
-      TZ: Europe/Amsterdam
-#    envFrom:
-#      - secretRef:
-#          name: home-assistant-env
+    envFrom:
+     - secretRef:
+         name: home-assistant-secrets
 
     persistence:
       config:
