@@ -19,7 +19,7 @@ spec:
   interval: 10m0s
   values:
     fullnameOverride: postgresql
-    existingSecret: posgtresql-secrets
+    existingSecret: postgresql-secrets
     image:
       registry: docker.io
       repository: bitnami/postgresql
