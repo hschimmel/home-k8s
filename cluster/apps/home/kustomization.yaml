@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - vernemq
   - postgres
-  # - home-assistant
+  - home-assistant
   - tasmo-admin
   - zwavejs2mqtt
