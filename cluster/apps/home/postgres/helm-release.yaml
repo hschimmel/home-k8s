@@ -21,7 +21,7 @@ spec:
     fullnameOverride: postgresql
     postgresqlDatabase: ${HASS_POSTGRESQL_DATABASE}
     postgresqlUsername: ${HASS_POSTGRESQL_USERNAME}
-    postgresqlPassword: ${HASS_POSTGRESQL_PASSWORD}
+    postgresqlPassword: "${HASS_POSTGRESQL_PASSWORD}"
     image:
       registry: docker.io
       repository: bitnami/postgresql
