@@ -19,9 +19,7 @@ spec:
   interval: 10m0s
   values:
     fullnameOverride: postgresql
-    postgresqlDatabase: ${HASS_POSTGRESQL_DATABASE}
-    postgresqlUsername: ${HASS_POSTGRESQL_USERNAME}
-    postgresqlPassword: "${HASS_POSTGRESQL_PASSWORD}"
+    existingSecret: posgtresql-secrets
     image:
       registry: docker.io
       repository: bitnami/postgresql
