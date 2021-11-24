@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  releaseName: vernemq
+  releaseName: vernemq-broker
   chart:
     spec:
       # renovate: registryUrl=https://vernemq.github.io/docker-vernemq
