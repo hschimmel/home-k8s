@@ -6,3 +6,4 @@ resources:
   - postgres
   - tasmo-admin
   - zwavejs2mqtt
+  - home-assistant
