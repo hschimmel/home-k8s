@@ -20,7 +20,7 @@ spec:
       ingressClass: nginx
       replicaCount: 1
       service:
-        type: LoadBalancer
+        type: ClusterIP
         loadBalancerIP: "${INGRESS_NGINX_LB}"
         externalTrafficPolicy: Local
       config:
