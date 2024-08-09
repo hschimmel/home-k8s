@@ -23,7 +23,7 @@ spec:
     image:
       registry: docker.io
       repository: bitnami/postgresql
-      tag: 14.4.0
+      tag: 14.13.0
       pullPolicy: IfNotPresent
     persistence:
       enabled: true
